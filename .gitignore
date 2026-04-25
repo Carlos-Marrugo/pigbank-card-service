@@ -1,0 +1,7 @@
+# Binaries
+user-service-binary
+*.exe
+
+# Environment
+.env
+*.env
