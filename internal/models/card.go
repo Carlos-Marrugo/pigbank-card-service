@@ -14,7 +14,7 @@ type Transaction struct {
 	TransactionID string  `json:"transaction_id" dynamodbav:"transaction_id"`
 	CardID        string  `json:"card_id" dynamodbav:"card_id"`
 	UserID        string  `json:"user_id" dynamodbav:"user_id"`
-	Type          string  `json:"type" dynamodbav:"type"` 
+	Type          string  `json:"type" dynamodbav:"type"`
 	Amount        float64 `json:"amount" dynamodbav:"amount"`
 	Description   string  `json:"description" dynamodbav:"description"`
 	CreatedAt     string  `json:"created_at" dynamodbav:"created_at"`
@@ -25,7 +25,15 @@ type CardRequest struct {
 	Request string `json:"request"`
 }
 
-type Score struct {
+type TransactionRequest struct {
+	CardID      string  `json:"card_id"`
+	Amount      float64 `json:"amount"`
+	Description string  `json:"description"`
+	Type        string  `json:"type"` 
+}
+
+type ReportRequest struct {
 	UserID string `json:"user_id"`
-	Score  int    `json:"score"`
+	From   string `json:"from"`
+	To     string `json:"to"`
 }
